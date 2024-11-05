@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Thyroid Health App</title>
+    <meta charset="UTF-8">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
+            color: #333;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            color: #4a86e8;
+        }
+        .butterfly {
+            position: absolute;
+            font-size: 36px;
+            transition: left 1s ease-in-out, top 1s ease-in-out, opacity 1s ease-in-out;
+            opacity: 0;
+        }
+        .lang-switch {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+        }
+        .lang-switch select {
+            padding: 5px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            background-color: #fff;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="lang-switch">
+        <select onchange="switchLanguage(this.value)">
+            <option value="en">English</option>
+            <option value="zh-tw">繁體中文</option>
+            <option value="zh-cn">简体中文</option>
+            <option value="hi">हिन्दी</option>
+            <option value="es">Español</option>
+            <option value="fr">Français</option>
+            <option value="ar">العربية</option>
+            <option value="ru">Русский</option>
+            <option value="pt">Português</option>
+            <option value="he">עברית</option>
+            <option value="eo">Esperanto</option>
+        </select>
+    </div>
+    
+    <div class="butterfly" id="butterfly">🦋</div>
+    
+    <div id="content">
+        <h1>Hello, everyone! I'm Jason.</h1>
+        <p>I've worked in the field of smart hardware and AI at large companies, and I'm now venturing into AI-related entrepreneurship.</p>
+
+        <p>Two years ago, during a routine check-up, my wife was diagnosed with thyroid nodules. This year, after a biopsy, we found out it was a malignant tumor, so she underwent surgery to remove her left thyroid. The procedure went smoothly, but it's been quite a long journey. Going forward, she needs to watch her diet carefully — for example, limiting foods like kelp and cruciferous vegetables.</p>
+
+        <p>This inspired me to create an app to help thyroid patients manage their diet. The app's core functions are:</p>
+        <ol>
+            <li>To identify which foods are safe to eat and explain why certain foods should be avoided.</li>
+            <li>To remind users when to take medication (my wife currently takes levothyroxine, which she often forgets to take an hour or two before meals).</li>
+            <li>To generate meal plans (because deciding what to eat every day is truly exhausting).</li>
+        </ol>
+
+        <p>That's the plan so far. If you have any other ideas, please let me know. I currently have a small team ready to develop this app.</p>
+
+        <p>Finally, I wish you all good health, good health, good health (some things are worth saying three times).</p>
+        <p>Contact email: xunfeng1980@gmail.com</p>
+
+    </div>
+
+    <script>
+        function switchLanguage(lang) {
+            if (lang === 'en') {
+                // Display English content
+                document.getElementById('content').innerHTML = `
+                    <h1>Hello, everyone! I'm Jason.</h1>
+                    <p>I've worked in the field of smart hardware and AI at large companies, and I'm now venturing into AI-related entrepreneurship.</p>
+
+                    <p>Two years ago, during a routine check-up, my wife was diagnosed with thyroid nodules. This year, after a biopsy, we found out it was a malignant tumor, so she underwent surgery to remove her left thyroid. The procedure went smoothly, but it's been quite a long journey. Going forward, she needs to watch her diet carefully — for example, limiting foods like kelp and cruciferous vegetables.</p>
+
+                    <p>This inspired me to create an app to help thyroid patients manage their diet. The app's core functions are:</p>
+                    <ol>
+                        <li>To identify which foods are safe to eat and explain why certain foods should be avoided.</li>
+                        <li>To remind users when to take medication (my wife currently takes levothyroxine, which she often forgets to take an hour or two before meals).</li>
+                        <li>To generate meal plans (because deciding what to eat every day is truly exhausting).</li>
+                    </ol>
+
+                    <p>That's the plan so far. If you have any other ideas, please let me know. I currently have a small team ready to develop this app.</p>
+
+                    <p>Finally, I wish you all good health, good health, good health (some things are worth saying three times).</p>
+
+                    <p>Contact email: xunfeng1980@gmail.com</p>
+                `;
+                document.getElementById('butterfly').innerHTML = '🦋';
+                document.getElementById('butterfly').style.color = '';
+            } else if (lang === 'zh-tw') {
+                // Display Traditional Chinese content
+                document.getElementById('content').innerHTML = `
+                    <h1>大家好！我是Jason。</h1>
+                    <p>我之前在大公司裡頭做智慧硬體和人工智慧相關的工作，現在呢，我正在創業，搞人工智慧相關的事兒。</p>
+
+                    <p>兩年前，我老婆在做例行檢查的時候，被診斷出有甲狀腺結節。今年吧，做了活檢之後，我們才發現原來是個惡性腫瘤，所以她就動手術把左邊的甲狀腺給切除了。手術很順利，但這一路走來真的不容易。往後呢，她在飲食上要特別注意，比如說要少吃海帶啊、十字花科蔬菜之類的。</p>
+
+                    <p>這事兒啟發我開發一個App，專門幫助甲狀腺患者管理飲食。這個App的核心功能呢，主要有：</p>
+                    <ol>
+                        <li>分辨哪些食物是安全的，解釋為啥有些食物要避免。</li>
+                        <li>提醒使用者該什麼時候吃藥（我老婆現在吃左旋甲狀腺素，她老是忘記要在吃飯前一兩個小時吃）。</li>
+                        <li>生成飲食計畫（因為每天決定吃啥真的很累人）。</li>
+                    </ol>
+
+                    <p>目前的計畫大概就這樣。如果你有任何其他的想法，記得跟我說一聲啊。我現在手頭上有個小團隊，準備開發這個App呢。</p>
+
+                    <p>最後，我祝大家身體健康，身體健康，身體健康（有些話就是值得說三遍）。</p>
+
+                    <p>聯絡信箱：xunfeng1980@gmail.com</p>
+                `;
+                document.getElementById('butterfly').innerHTML = '🦋';
+                document.getElementById('butterfly').style.color = 'red';
+            } else if (lang === 'zh-cn') {
+                // Display Simplified Chinese content
+                document.getElementById('content').innerHTML = `
+                    <h1>大家好！我是Jason。</h1>
+                    <p>我之前在大公司里头做智能硬件和人工智能相关的工作，现在呢，我正在创业，搞人工智能相关的事儿。</p>
+
+                    <p>两年前，我老婆在做例行检查的时候，被诊断出有甲状腺结节。今年吧，做了活检之后，我们才发现原来是个恶性肿瘤，所以她就动手术把左边的甲状腺给切除了。手术很顺利，但这一路走来真的不容易。往后呢，她在饮食上要特别注意，比如说要少吃海带啊、十字花科蔬菜之类的。</p>
+
+                    <p>这事儿启发我开发一个App，专门帮助甲状腺患者管理饮食。这个App的核心功能呢，主要有：</p>
+                    <ol>
+                        <li>分辨哪些食物是安全的，解释为啥有些食物要避免。</li>
+                        <li>提醒用户该什么时候吃药（我老婆现在吃左旋甲状腺素，她老是忘记要在吃饭前一两个小时吃）。</li>
+                        <li>生成饮食计划（因为每天决定吃啥真的很累人）。</li>
+                    </ol>
+
+                    <p>目前的计划大概就这样。如果你有任何其他的想法，记得跟我说一声啊。我现在手头上有个小团队，准备开发这个App呢。</p>
+
+                    <p>最后，我祝大家身体健康，身体健康，身体健康（有些话就是值得说三遍）。</p>
+
+                    <p>联系邮箱：xunfeng1980@gmail.com</p>
+                `;
+                document.getElementById('butterfly').innerHTML = '🦋';
+                document.getElementById('butterfly').style.color = 'purple';
+            } else if (lang === 'hi') {
+                // Display Hindi content
+                document.getElementById('content').innerHTML = `
+                    <h1>नमस्ते सभी! मैं जेसन हूँ।</h1>
+                    <p>मैंने बड़ी कंपनियों में स्मार्ट हार्डवेयर और AI के क्षेत्र में काम किया है, और अब मैं AI से संबंधित उद्यमिता में उतर रहा हूँ।</p>
+
+                    <p>दो साल पहले, एक नियमित जाँच के दौरान, मेरी पत्नी को थायरॉयड नोड्यूल का पता चला था। इस साल, बायोप्सी के बाद, हमें पता चला कि यह एक घातक ट्यूमर था, इसलिए उसने अपने बाएं थायरॉयड को हटाने के लिए सर्जरी करवाई। प्रक्रिया सुचारू रूप से हुई, लेकिन यह काफी लंबी यात्रा रही है। आगे बढ़ते हुए, उसे अपने आहार पर ध्यान से नज़र रखने की ज़रूरत है - उदाहरण के लिए, केल्प और क्रूसीफेरस सब्जियों जैसे खाद्य पदार्थों को सीमित करना।</p>
+
+                    <p>इसने मुझे थायरॉयड रोगियों को उनके आहार का प्रबंधन करने में मदद करने के लिए एक ऐप बनाने के लिए प्रेरित किया। ऐप के मुख्य कार्य हैं:</p>
+                    <ol>
+                        <li>पहचानें कि कौन से खाद्य पदार्थ खाने के लिए सुरक्षित हैं और समझाएं कि कुछ खाद्य पदार्थों से क्यों बचना चाहिए।</li>
+                        <li>उपयोगकर्ताओं को याद दिलाएं कि कब दवा लेनी है (मेरी पत्नी वर्तमान में लेवोथायरोक्सिन लेती है, जिसे वह अक्सर भोजन से एक या दो घंटे पहले लेना भूल जाती है)।</li>
+                        <li>भोजन योजनाएं बनाएं (क्योंकि हर दिन क्या खाना है, यह तय करना वास्तव में थकाऊ है)।</li>
+                    </ol>
+
+                    <p>अभी तक की योजना यही है। अगर आपके पास कोई अन्य विचार हैं, तो कृपया मुझे बताएं। मेरे पास वर्तमान में इस ऐप को विकसित करने के लिए तैयार एक छोटी टीम है।</p>
+
+                    <p>अंत में, मैं आप सभी को अच्छा स्वास्थ्य, अच्छा स्वास्थ्य, अच्छा स्वास्थ्य की कामना करता हूं (कुछ बातें तीन बार कहने लायक होती हैं)।</p>
+
+                    <p>संपर्क ईमेल: xunfeng1980@gmail.com</p>
+                `;
+                document.getElementById('butterfly').innerHTML = '🦋';
+                document.getElementById('butterfly').style.color = 'orange';
+            } else if (lang === 'es') {
+                // Display Spanish content
+                document.getElementById('content').innerHTML = `
+                    <h1>¡Hola a todos! Soy Jason.</h1>
+                    <p>He trabajado en el campo del hardware inteligente y la IA en grandes empresas, y ahora me estoy aventurando en el emprendimiento relacionado con la IA.</p>
+
+                    <p>Hace dos años, durante un chequeo de rutina, a mi esposa le diagnosticaron nódulos tiroideos. Este año, después de una biopsia, descubrimos que era un tumor maligno, por lo que se sometió a una cirugía para extirpar su tiroides izquierda. El procedimiento transcurrió sin problemas, pero ha sido un largo camino. Para seguir adelante, necesita vigilar cuidadosamente su dieta, por ejemplo, limitando alimentos como el kelp y las verduras crucíferas.</p>
+
+                    <p>Esto me inspiró a crear una aplicación para ayudar a los pacientes con problemas de tiroides a gestionar su dieta. Las funciones principales de la aplicación son:</p>
+                    <ol>
+                        <li>Identificar qué alimentos son seguros para comer y explicar por qué se deben evitar ciertos alimentos.</li>
+                        <li>Recordar a los usuarios cuándo tomar la medicación (mi esposa actualmente toma levotiroxina, que a menudo olvida tomar una o dos horas antes de las comidas).</li>
+                        <li>Generar planes de comidas (porque decidir qué comer todos los días es realmente agotador).</li>
+                    </ol>
+
+                    <p>Ese es el plan hasta ahora. Si tienes alguna otra idea, por favor házmelo saber. Actualmente tengo un pequeño equipo listo para desarrollar esta aplicación.</p>
+
+                    <p>Finalmente, les deseo a todos buena salud, buena salud, buena salud (algunas cosas vale la pena decirlas tres veces).</p>
+
+                    <p>Correo electrónico de contacto: xunfeng1980@gmail.com</p>
+                `;
+                document.getElementById('butterfly').innerHTML = '🦋';
+                document.getElementById('butterfly').style.color = 'green';
+            } else if (lang === 'fr') {
+                // Display French content
+                document.getElementById('content').innerHTML = `
+                    <h1>Bonjour à tous ! Je suis Jason.</h1>
+                    <p>J'ai travaillé dans le domaine du matériel intelligent et de l'IA dans de grandes entreprises, et maintenant je me lance dans l'entrepreneuriat lié à l'IA.</p>
+
+                    <p>Il y a deux ans, lors d'un examen de routine, on a diagnostiqué à ma femme des nodules thyroïdiens. Cette année, après une biopsie, nous avons découvert qu'il s'agissait d'une tumeur maligne, elle a donc subi une chirurgie pour enlever sa thyroïde gauche. La procédure s'est déroulée sans problème, mais cela a été un long chemin. À l'avenir, elle doit surveiller attentivement son alimentation, par exemple en limitant les aliments comme le kelp et les crucifères.</p>
+
+                    <p>Cela m'a inspiré pour créer une application afin d'aider les patients atteints de troubles thyroïdiens à gérer leur alimentation. Les principales fonctionnalités de l'application sont :</p>
+                    <ol>
+                        <li>Identifier les aliments sûrs à manger et expliquer pourquoi certains aliments doivent être évités.</li>
+                        <li>Rappeler aux utilisateurs quand prendre leurs médicaments (ma femme prend actuellement de la lévothyroxine, qu'elle oublie souvent de prendre une ou deux heures avant les repas).</li>
+                        <li>Générer des plans de repas (car décider quoi manger tous les jours est vraiment épuisant).</li>
+                    </ol>
+
+                    <p>C'est le plan jusqu'à présent. Si vous avez d'autres idées, n'hésitez pas à me le faire savoir. J'ai actuellement une petite équipe prête à développer cette application.</p>
+
+                    <p>Enfin, je vous souhaite à tous une bonne santé, une bonne santé, une bonne santé (certaines choses valent la peine d'être dites trois fois).</p>
+
+                    <p>Email de contact : xunfeng1980@gmail.com</p>
+                `;
+                document.getElementById('butterfly').innerHTML = '🦋';
+                document.getElementById('butterfly').style.color = 'blue';
+            } else if (lang === 'ar') {
+                // Display Arabic content
+                document.getElementById('content').innerHTML = `
+                    <h1>مرحبًا بالجميع! أنا جيسون.</h1>
+                    <p>لقد عملت في مجال الأجهزة الذكية والذكاء الاصطناعي في الشركات الكبرى، والآن أنا أخوض في ريادة الأعمال المتعلقة بالذكاء الاصطناعي.</p>
+
+                    <p>قبل عامين، خلال فحص روتيني، تم تشخيص زوجتي بعقيدات الغدة الدرقية. هذا العام، بعد خزعة، اكتشفنا أنه ورم خبيث، لذلك خضعت لجراحة لإزالة الغدة الدرقية اليسرى. سارت العملية بسلاسة، لكنها كانت رحلة طويلة. للمضي قدمًا، تحتاج إلى مراقبة نظامها الغذائي بعناية - على سبيل المثال، تقليل الأطعمة مثل الكيلب والخضروات الصليبية.</p>
+
+                    <p>هذا ألهمني لإنشاء تطبيق لمساعدة مرضى الغدة الدرقية على إدارة نظامهم الغذائي. الوظائف الرئيسية للتطبيق هي:</p>
+                    <ol>
+                        <li>تحديد الأطعمة الآمنة للأكل وشرح سبب تجنب بعض الأطعمة.</li>
+                        <li>تذكير المستخدمين بموعد تناول الدواء (تتناول زوجتي حاليًا ليفوثيروكسين، والتي غالبًا ما تنسى تناولها قبل ساعة أو ساعتين من الوجبات).</li>
+                        <li>إنشاء خطط وجبات (لأن تقرير ما يجب تناوله كل يوم مرهق حقًا).</li>
+                    </ol>
+
+                    <p>هذه هي الخطة حتى الآن. إذا كانت لديك أي أفكار أخرى، فيرجى إخباري. لدي حاليًا فريق صغير جاهز لتطوير هذا التطبيق.</p>
+
+                    <p>أخيرًا، أتمنى لكم جميعًا صحة جيدة، صحة جيدة، صحة جيدة (بعض الأشياء تستحق أن تقال ثلاث مرات).</p>
+
+                    <p>البريد الإلكتروني للتواصل: xunfeng1980@gmail.com</p>
+                `;
+                document.getElementById('butterfly').innerHTML = '🦋';
+                document.getElementById('butterfly').style.color = 'purple';
+            } else if (lang === 'ru') {
+                // Display Russian content
+                document.getElementById('content').innerHTML = `
+                    <h1>Всем привет! Я Джейсон.</h1>
+                    <p>Я работал в области умного оборудования и искусственного интеллекта в крупных компаниях, а теперь занимаюсь предпринимательством, связанным с ИИ.</p>
+
+                    <p>Два года назад, во время планового осмотра, у моей жены диагностировали узлы щитовидной железы. В этом году, после биопсии, мы обнаружили, что это злокачественная опухоль, поэтому ей сделали операцию по удалению левой щитовидной железы. Процедура прошла гладко, но это был долгий путь. В будущем ей нужно тщательно следить за своим питанием - например, ограничивать такие продукты, как ламинария и крестоцветные овощи.</p>
+
+                    <p>Это вдохновило меня на создание приложения, которое поможет пациентам с заболеваниями щитовидной железы управлять своим питанием. Основные функции приложения:</p>
+                    <ol>
+                        <li>Определять, какие продукты безопасны для употребления, и объяснять, почему следует избегать определенных продуктов.</li>
+                        <li>Напоминать пользователям, когда принимать лекарства (моя жена в настоящее время принимает левотироксин, который она часто забывает принимать за час или два до еды).</li>
+                        <li>Генерировать планы питания (потому что решать, что есть каждый день, действительно утомительно).</li>
+                    </ol>
+
+                    <p>Таков план на данный момент. Если у вас есть другие идеи, пожалуйста, дайте мне знать. В настоящее время у меня есть небольшая команда, готовая разработать это приложение.</p>
+
+                    <p>И наконец, я желаю вам всем крепкого здоровья, крепкого здоровья, крепкого здоровья (некоторые вещи стоит повторять трижды).</p>
+
+                    <p>Контактный email: xunfeng1980@gmail.com</p>
+                `;
+                document.getElementById('butterfly').innerHTML = '🦋';
+                document.getElementById('butterfly').style.color = 'red';
+            } else if (lang === 'pt') {
+                // Display Portuguese content  
+                document.getElementById('content').innerHTML = `
+                    <h1>Olá a todos! Eu sou o Jason.</h1>
+                    <p>Trabalhei no campo de hardware inteligente e IA em grandes empresas e agora estou me aventurando no empreendedorismo relacionado à IA.</p>
+
+                    <p>Há dois anos, durante um check-up de rotina, minha esposa foi diagnosticada com nódulos na tireoide. Este ano, após uma biópsia, descobrimos que era um tumor maligno, então ela passou por uma cirurgia para remover a tireoide esquerda. O procedimento correu bem, mas foi uma longa jornada. Daqui para frente, ela precisa monitorar cuidadosamente sua dieta - por exemplo, limitando alimentos como algas e vegetais crucíferos.</p>
+
+                    <p>Isso me inspirou a criar um aplicativo para ajudar os pacientes com problemas de tireoide a gerenciar sua dieta. As principais funções do aplicativo são:</p>
+                    <ol>
+                        <li>Identificar quais alimentos são seguros para comer e explicar por que certos alimentos devem ser evitados.</li>
+                        <li>Lembrar os usuários quando tomar medicamentos (minha esposa atualmente toma levotiroxina, que ela frequentemente esquece de tomar uma ou duas horas antes das refeições).</li>
+                        <li>Gerar planos de refeições (porque decidir o que comer todos os dias é realmente exaustivo).</li>
+                    </ol>
+
+                    <p>Esse é o plano até agora. Se você tiver outras ideias, por favor, me avise. Atualmente, tenho uma pequena equipe pronta para desenvolver este aplicativo.</p>
+
+                    <p>Por fim, desejo a todos vocês boa saúde, boa saúde, boa saúde (algumas coisas valem a pena ser ditas três vezes).</p>
+
+                    <p>Email de contato: xunfeng1980@gmail.com</p>
+                `;
+                document.getElementById('butterfly').innerHTML = '🦋';
+                document.getElementById('butterfly').style.color = 'yellow';
+            } else if (lang === 'he') {
+                // Display Hebrew content
+                document.getElementById('content').innerHTML = `
+                    <h1>שלום לכולם! אני ג'ייסון.</h1>
+                    <p>עבדתי בתחום החומרה החכמה ובינה מלאכותית בחברות גדולות, וכעת אני מתחיל ביזמות הקשורה לבינה מלאכותית.</p>
+
+                    <p>לפני שנתיים, במהלך בדיקה שגרתית, אובחנה אשתי עם גושים בבלוטת התריס. השנה, לאחר ביופסיה, גילינו שמדובר בגידול ממאיר, אז היא עברה ניתוח להסרת בלוטת התריס השמאלית. הניתוח עבר בצורה חלקה, אבל זו הייתה מסע ארוך. מכאן ואילך, היא צריכה לעקוב בקפידה אחר התזונה שלה - למשל, להגביל מזונות כמו אצות וירקות צלבניים.</p>
+
+                    <p>זה הביא אותי ליצור אפליקציה שתעזור לחולי בלוטת התריס לנהל את התזונה שלהם. הפונקציות העיקריות של האפליקציה הן:</p>
+                    <ol>
+                        <li>לזהות אילו מזונות בטוחים לאכילה ולהסביר מדוע יש להימנע ממזונות מסוימים.</li>
+                        <li>להזכיר למשתמשים מתי ליטול תרופות (אשתי כרגע נוטלת לבותירוקסין, שהיא לעתים קרובות שוכחת ליטול שעה או שעתיים לפני הארוחות).</li>
+                        <li>ליצור תוכניות ארוחות (כי להחליט מה לאכול כל יום זה ממש מתיש).</li>
+                    </ol>
+
+                    <p>זו התוכנית בינתיים. אם יש לכם רעיונות נוספים, אנא הודיעו לי. כרגע יש לי צוות קטן מוכן לפתח את האפליקציה הזו.</p>
+
+                    <p>לבסוף, אני מאחל לכולכם בריאות טובה, בריאות טובה, בריאות טובה (יש דברים ששווה לומר אותם שלוש פעמים).</p>
+
+                    <p>אימייל ליצירת קשר: xunfeng1980@gmail.com</p>
+                `;
+                document.getElementById('butterfly').innerHTML = '🦋';
+                document.getElementById('butterfly').style.color = 'green';
+            } else if (lang === 'eo') {
+                // Display Esperanto content
+                document.getElementById('content').innerHTML = `
+                    <h1>Saluton al ĉiuj! Mi estas Jason.</h1>
+                    <p>Mi laboris en la fako de inteligenta aparataro kaj AI ĉe grandaj kompanioj, kaj nun mi aventuras en AI-rilata entreprenado.</p>
+
+                    <p>Antaŭ du jaroj, dum rutina kontrolo, mia edzino estis diagnozita kun tiroida nodulo. Ĉi-jare, post biopsio, ni trovis, ke ĝi estis maligna tumoro, do ŝi subiris operacion por forigi ŝian maldekstran tiroidon. La proceduro iris glate, sed ĝi estis sufiĉe longa vojaĝo. Antaŭenirante, ŝi bezonas atente kontroli sian dieton - ekzemple, limigante manĝaĵojn kiel kelpo kaj kruciformaj legomoj.</p>
+
+                    <p>Ĉi tio inspiris min krei aplikaĵon por helpi tiroidajn pacientojn administri sian dieton. La ĉefaj funkcioj de la aplikaĵo estas:</p>
+                    <ol>
+                        <li>Identigi, kiuj manĝaĵoj estas sekuraj por manĝi kaj klarigi, kial iuj manĝaĵoj evitindas.</li>
+                        <li>Memorigu uzantojn, kiam preni medikamentojn (mia edzino nuntempe prenas levotiroksino, kiun ŝi ofte forgesas preni unu aŭ du horojn antaŭ manĝoj).</li>
+                        <li>Generi manĝoplanojn (ĉar decidi, kion manĝi ĉiutage, estas vere elĉerpiga).</li>
+                    </ol>
+
+                    <p>Jen la plano ĝis nun. Se vi havas aliajn ideojn, bonvolu sciigi min. Mi nuntempe havas malgrandan teamon pretan disvolvi ĉi tiun aplikaĵon.</p>
+
+                    <p>Fine, mi deziras al vi ĉiuj bonan sanon, bonan sanon, bonan sanon (iuj aferoj indas diri trifoje).</p>
+
+                    <p>Kontakta retpoŝto: xunfeng1980@gmail.com</p>
+                `;
+                document.getElementById('butterfly').innerHTML = '🦋';
+                document.getElementById('butterfly').style.color = 'orange';
+            } else {
+                // Display English content by default
+                document.getElementById('content').innerHTML = `
+                    <h1>Hi everyone! I'm Jason.</h1>
+                    <p>I've worked in the field of smart hardware and AI at big companies, and now I'm venturing into AI-related entrepreneurship.</p>
+
+                    <p>Two years ago, during a routine checkup, my wife was diagnosed with thyroid nodules. This year, after a biopsy, we found out it was a malignant tumor, so she underwent surgery to remove her left thyroid. The procedure went smoothly, but it's been a long journey. Moving forward, she needs to carefully monitor her diet - for example, limiting foods like kelp and cruciferous vegetables.</p>
+
+                    <p>This inspired me to create an app to help thyroid patients manage their diet. The app's main functions are:</p>
+                    <ol>
+                        <li>Identify which foods are safe to eat and explain why certain foods should be avoided.</li>
+                        <li>Remind users when to take medication (my wife currently takes levothyroxine, which she often forgets to take one or two hours before meals).</li>
+                        <li>Generate meal plans (because deciding what to eat every day is really exhausting).</li>
+                    </ol>
+
+                    <p>That's the plan so far. If you have any other ideas, please let me know. I currently have a small team ready to develop this app.</p>
+
+                    <p>Finally, I wish you all good health, good health, good health (some things are worth saying three times).</p>
+
+                    <p>Contact email: xunfeng1980@gmail.com</p>
+                `;
+                document.getElementById('butterfly').innerHTML = '🦋';
+                document.getElementById('butterfly').style.color = 'black';
+            }}
+        
+        let mouseTimer;
+        document.addEventListener('mousemove', function(e) {
+            let x = e.clientX;
+            let y = e.clientY;
+            
+            let butterfly = document.getElementById('butterfly');
+            
+            butterfly.style.left = x + 'px';
+            butterfly.style.top = y + 'px';
+            butterfly.style.opacity = 1;
+            
+            clearTimeout(mouseTimer);
+            mouseTimer = setTimeout(startSmoothFlight, 1000);
+        });
+        
+        function startSmoothFlight() {
+            let butterfly = document.getElementById('butterfly');
+            let currentX = butterfly.offsetLeft;
+            let currentY = butterfly.offsetTop;
+            let targetX = currentX + (Math.random() - 0.5) * window.innerWidth / 3;
+            let targetY = currentY + (Math.random() - 0.5) * window.innerHeight / 3;
+            
+            butterfly.style.left = currentX + 'px';
+            butterfly.style.top = currentY + 'px';
+            
+            setTimeout(function() {
+                butterfly.style.left = targetX + 'px';
+                butterfly.style.top = targetY + 'px';
+                butterfly.style.opacity = 0;
+            }, 50);
+            
+            setTimeout(startSmoothFlight, 2000);
+        }
+        
+        startSmoothFlight();
+    </script>
+    
+</body>
+</html>
